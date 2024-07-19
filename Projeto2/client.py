@@ -27,7 +27,6 @@ def main():
         #Direções possíveis Norte = 0, Leste = 1, Sul = 2,Oeste = 3
         #Ações possíveis: 0 = left, 1 = right, 2 = jump
         acoesPossiveis = ["left", "right", "jump"]        
-        jogo_terminou = False
          
         #Pega o estado e a recompensa iniciais vindas do connection
         estado, recompensa = cn.get_state_reward(c, "")
@@ -55,7 +54,7 @@ def main():
             print("Ação efetuada: " + acoesPossiveis[acao] + "\nNovo estado: "+novo_estado+"\nPlataforma: " + str(plataforma)+"\nDireção: " + str(direcao)+"\nRecompensa: "+str(recompensa)+"\n")
              
             #Atualiza a tabela Q
-            Q[estado_int, acao] = (1 - alpha) * Q[estado_int, acao] + alpha * (recompensa + gamma * np.max(Q[novo_estado_int]))               
+            Q[estado_int, acao] = (1 - alpha) * Q[estado_int, acao] + alpha * (recompensa + gamma * np.max(Q[novo_estado_int]))
                         
             #Atualiza o estado atual
             estado = novo_estado
