@@ -9,3 +9,6 @@
     ```
     cd Projeto2
     ```
+    ```
+    python client.py
+    ```
