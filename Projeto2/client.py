@@ -19,15 +19,15 @@ def main():
             Q = np.zeros([24 * 4, 3])  #Se der erro inicia a tabela Q com zeros      
         
         #Parâmetros do Q-Learning
-        alpha = 0.7 # taxa de aprendizado(0 = não aprende nada, 1 = aprende 100%)
-        gamma = 0.95 # fator de desconto(busca de recompensas)
+        alpha = 0.7 # taxa de aprendizado (0 = não aprende nada, 1 = aprende 100%)
+        gamma = 0.95 # fator de desconto (busca de recompensas)
         epsilon = 0.1 # seleção de ação
         
         #Variáveis para o jogo
         #Direções possíveis Norte = 0, Leste = 1, Sul = 2,Oeste = 3
         #Ações possíveis: 0 = left, 1 = right, 2 = jump
-        acoesPossiveis = ["left", "right", "jump"]        
-         
+        acoesPossiveis = ["left", "right", "jump"]
+        
         #Pega o estado e a recompensa iniciais vindas do connection
         estado, recompensa = cn.get_state_reward(c, "")
         plataforma = int(estado[2:7], 2)
